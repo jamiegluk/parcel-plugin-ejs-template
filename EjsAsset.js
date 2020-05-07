@@ -10,12 +10,12 @@ class EjsAsset extends Asset {
 
   async generate() {
     const ejs = await localRequire('ejs', this.name);
-    const config = (await this.getConfig(['.ejsrc', '.ejsrc.js', 'ejs.config.js'])) || {};
+    const config = (await this.getConfig(['.ejsrc', '.ejsrc.js', 'ejs.config.js', 'ejs.default.json'])) || {};
 
     const compiled = ejs.compile(this.contents, {
       compileDebug: false,
       filename: this.name,
-      _with: false,
+      _with: true,
     });
 
     if (compiled.dependencies) {
@@ -26,7 +26,7 @@ class EjsAsset extends Asset {
       }
     }
 
-    return compiled(config.locals);
+    return compiled(config);
   }
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "parcel-plugin-ejs-template",
+  "name": "parcel-plugin-ejs-template-vars",
   "version": "0.2.0",
   "main": "index.js",
   "repository": "https://github.com/sarioglu/parcel-plugin-ejs-template.git",

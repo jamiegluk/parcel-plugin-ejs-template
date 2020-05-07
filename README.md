@@ -1,11 +1,11 @@
-# parcel-plugin-ejs-template
+# parcel-plugin-ejs-template-vars
 
 EJS support for Parcel bundler
 
 ## Installation
 
 ```bash
-npm install -D parcel-plugin-ejs-template
+npm install -D parcel-plugin-ejs-template-vars
 ```
 
 ## Usage
@@ -18,9 +18,7 @@ You can pass some local variables to your `.ejs` file by creating a config file 
 
 ```js
 module.export = {
-  locals: {
     foo: "bar",
-  },
 };
 ```
 
@@ -28,7 +26,7 @@ These variables will be available in your `.ejs` file.
 
 ```html
 <div>
-  <%= locals.foo %>
+  <%= foo %>
 </div>
 ```
 
