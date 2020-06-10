@@ -22,6 +22,14 @@ module.export = {
 };
 ```
 
+or `{ejs_file_name}.ejsrc`:
+
+```js
+{
+    foo: "bar"
+}
+```
+
 These variables will be available in your `.ejs` file.
 
 ```html
