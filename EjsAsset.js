@@ -31,6 +31,21 @@ class EjsAsset extends Asset {
       }
     }
 
+    const includeRegExp = /\<%-\sinclude\('(.*)'/g;
+    const includedPaths = [];
+    let matches;
+    while (matches = includeRegExp.exec(this.contents)) {
+      includedPaths.push(matches[1]);
+    }
+
+    includedPaths.forEach((path) => {
+      try {
+        this.addURLDependency(`/${path}.ejs`, this.name, {includedInParent: true});
+      } catch (e) {
+        console.error(e);
+      }
+    })
+
     return compiled(config);
   }
 }
