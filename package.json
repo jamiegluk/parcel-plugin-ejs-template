@@ -1,18 +1,40 @@
 {
-  "name": "parcel-plugin-ejs-template-vars",
-  "version": "0.4.0",
+  "name": "parcel-plugin-ejs-template",
+  "version": "0.5.0",
   "main": "index.js",
-  "repository": "https://github.com/sarioglu/parcel-plugin-ejs-template.git",
-  "author": "Mehmet Sarıoğlu <sarioglumeh@gmail.com>",
+  "repository": "https://github.com/jamiegluk/parcel-plugin-ejs-template.git",
+  "author": "Jamie Lievesley <jamie@jamiegl.co.uk> (https://jamiegl.co.uk)",
+  "contributors": [
+    "Mehmet Sarıoğlu <sarioglumeh@gmail.com> (https://github.com/sarioglu)",
+    "Nikita Medvedev (https://github.com/Meyzz)"
+  ],
   "license": "MIT",
-  "homepage": "https://github.com/sarioglu/parcel-plugin-ejs-template",
+  "homepage": "https://github.com/jamiegluk/parcel-plugin-ejs-template",
   "keywords": [
     "parcel",
     "ejs",
-    "html templating"
+    "html templating",
+    "html template",
+    "plugin"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md,yml,prettierrc}": "prettier --write"
+  },
   "dependencies": {
     "ejs": "^3.0.2",
     "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.0.4",
+    "@types/parcel-bundler": "^1.12.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1",
+    "typescript": "^4.0.2"
   }
 }
