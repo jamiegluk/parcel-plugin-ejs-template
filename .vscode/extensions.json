@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "rbbit.typescript-hero",
+    "streetsidesoftware.code-spell-checker",
+    "ms-ceintl.vscode-language-pack-en-gb",
+    "ybaumes.highlight-trailing-white-spaces",
+    "nhoizey.gremlins",
+    "adambaldwin.vscode-nsp"
+  ]
+}
