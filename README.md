@@ -1,5 +1,9 @@
 # @jamiegluk/parcel-plugin-ejs-template
 
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/jamiegluk/parcel-plugin-ejs-template?color=blue)](https://github.com/jamiegluk/parcel-plugin-ejs-template/releases)
+[![GitHub lint Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/parcel-plugin-ejs-template/Lint?label=lint)](https://github.com/jamiegluk/parcel-plugin-ejs-template/actions?query=workflow%3A%22Lint%22)
+[![GitHub build Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/parcel-plugin-ejs-template/Build?label=build)](https://github.com/jamiegluk/parcel-plugin-ejs-template/actions?query=workflow%3A%22Build%22)
+
 EJS support for Parcel bundler
 
 ## Differences with [@sarioglu/parcel-plugin-ejs-template](https://github.com/sarioglu/parcel-plugin-ejs-template)
