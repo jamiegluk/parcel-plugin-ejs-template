@@ -55,8 +55,8 @@ These variables will be available in your `.ejs` file.
 
 - [Parcel](https://parceljs.org/)
 - [EJS](https://ejs.co/)
-- [parcel-plugin-ejs-template-vars](https://github.com/Meyzz/parcel-plugin-ejs-template)
-- [parcel-plugin-ejs-template](https://github.com/sarioglu/parcel-plugin-ejs-template)
+- [@Meyzz/parcel-plugin-ejs-template-vars](https://github.com/Meyzz/parcel-plugin-ejs-template)
+- [@sarioglu/parcel-plugin-ejs-template](https://github.com/sarioglu/parcel-plugin-ejs-template)
 
 ## Contributing
 
