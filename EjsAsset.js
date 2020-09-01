@@ -1,5 +1,6 @@
 // @ts-check
 /// <reference types="./Asset" />
+/// <reference path="./ejs.d.ts" />
 
 /** @type ParcelBundler */
 // @ts-ignore
@@ -18,9 +19,29 @@ class EjsAsset extends Asset {
     this.hmrPageReload = true;
   }
 
-  async generate() {
+  /**
+   * @param {Parameters<ParcelBundler.Asset["parse"]>[0]} code
+   * @returns {ReturnType<ParcelBundler.Asset["parse"]>}
+   */
+  async parse(code) {
+    /** @type {ejsx.ejsExtended} */
     const ejs = await localRequire("ejs", this.name);
 
+    return ejs.compile(code, {
+      compileDebug: false,
+      filename: this.name,
+      _with: true,
+      /** @type {ejsx.Includer} */
+      includer: (_, dep) => {
+        this.addDependency(dep, {
+          includedInParent: true,
+        });
+      },
+    });
+  }
+
+  /** @returns {ReturnType<ParcelBundler.Asset["generate"]>} */
+  async generate() {
     const config =
       (await this.getConfig([
         `${path.basename(this.name)}rc`,
@@ -28,38 +49,7 @@ class EjsAsset extends Asset {
         ".ejsrc.js",
         "ejs.config.js",
       ])) || {};
-    const compiled = ejs.compile(this.contents, {
-      compileDebug: false,
-      filename: this.name,
-      _with: true,
-    });
-
-    if (compiled.dependencies) {
-      for (let item of compiled.dependencies) {
-        this.addDependency(item, {
-          includedInParent: true,
-        });
-      }
-    }
-
-    const includeRegExp = /\<%-\sinclude\('(.*)'/g;
-    const includedPaths = [];
-    let matches;
-    while ((matches = includeRegExp.exec(this.contents))) {
-      includedPaths.push(matches[1]);
-    }
-
-    includedPaths.forEach((path) => {
-      try {
-        this.addURLDependency(`/${path}.ejs`, this.name, {
-          includedInParent: true,
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    });
-
-    return compiled(config);
+    return this.ast(config.locals);
   }
 }
 

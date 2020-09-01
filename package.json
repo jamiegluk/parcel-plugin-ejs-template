@@ -1,15 +1,6 @@
 {
   "name": "parcel-plugin-ejs-template",
-  "version": "0.5.0",
-  "main": "index.js",
-  "repository": "https://github.com/jamiegluk/parcel-plugin-ejs-template.git",
-  "author": "Jamie Lievesley <jamie@jamiegl.co.uk> (https://jamiegl.co.uk)",
-  "contributors": [
-    "Mehmet Sarıoğlu <sarioglumeh@gmail.com> (https://github.com/sarioglu)",
-    "Nikita Medvedev (https://github.com/Meyzz)"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/jamiegluk/parcel-plugin-ejs-template",
+  "version": "1.0.0",
   "keywords": [
     "parcel",
     "ejs",
@@ -17,6 +8,15 @@
     "html template",
     "plugin"
   ],
+  "homepage": "https://github.com/jamiegluk/parcel-plugin-ejs-template",
+  "repository": "https://github.com/jamiegluk/parcel-plugin-ejs-template.git",
+  "license": "MIT",
+  "author": "Jamie Lievesley <jamie@jamiegl.co.uk> (https://jamiegl.co.uk)",
+  "contributors": [
+    "Mehmet Sarıoğlu <sarioglumeh@gmail.com> (https://github.com/sarioglu)",
+    "Nikita Medvedev (https://github.com/Meyzz)"
+  ],
+  "main": "index.js",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

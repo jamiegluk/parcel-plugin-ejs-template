@@ -4,13 +4,16 @@ import { Asset } from "parcel-bundler";
 
 export as namespace ParcelBundler;
 
-export class Asset extends Asset {
+export class Asset<T = unknown> extends Asset {
   name: string;
   type: string;
   hmrPageReload: boolean;
   contents: string;
+  ast: T;
 
   constructor(name: string, options: {});
+
+  async parse(code: string): Promise<T>;
 
   async generate(): Promise<string>;
 
