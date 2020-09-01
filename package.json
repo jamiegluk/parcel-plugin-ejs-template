@@ -20,8 +20,8 @@
   "scripts": {
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "lint:fix-ts-emits": "prettier --write ./*.d.ts &&",
-    "ts": "tsc &&"
+    "pre-commit:fix-ts-emits": "prettier --write ./*.d.ts && echo-cli",
+    "pre-commit:tsc": "tsc && echo-cli"
   },
   "husky": {
     "hooks": {
@@ -31,8 +31,8 @@
   "lint-staged": {
     "*.{ts,js,json,md,yml,prettierrc}": "prettier --write .",
     "*.{ts,js}": [
-      "yarn run ts",
-      "yarn run lint:fix-ts-emits"
+      "yarn run pre-commit:tsc",
+      "yarn run pre-commit:fix-ts-emits"
     ]
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "@types/ejs": "^3.0.4",
     "@types/node": "^14.6.2",
     "@types/parcel-bundler": "^1.12.1",
+    "echo-cli": "^1.0.8",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
     "prettier": "^2.1.1",
