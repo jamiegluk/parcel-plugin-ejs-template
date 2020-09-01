@@ -1,8 +1,12 @@
-// @ts-check
-
 import { Asset } from "parcel-bundler";
 
 export as namespace ParcelBundler;
+
+export async function localRequire(
+  name: string,
+  path: string,
+  triedInstall = false
+): Promise<ReturnType<NodeRequire>>;
 
 export class Asset<T = unknown> extends Asset {
   name: string;

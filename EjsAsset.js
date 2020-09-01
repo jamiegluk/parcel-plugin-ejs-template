@@ -1,10 +1,10 @@
 // @ts-check
-/// <reference types="./Asset" />
-/// <reference path="./ejs.d.ts" />
 
 /** @type ParcelBundler */
 // @ts-ignore
 const { Asset } = require("parcel-bundler");
+/** @type ParcelBundler.localRequire */
+// @ts-ignore
 const localRequire = require("parcel-bundler/lib/utils/localRequire");
 const path = require("path");
 
