@@ -1,4 +1,4 @@
-# parcel-plugin-ejs-template-vars
+# @jamiegluk/parcel-plugin-ejs-template
 
 EJS support for Parcel bundler
 
