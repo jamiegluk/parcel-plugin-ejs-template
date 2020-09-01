@@ -2,6 +2,13 @@
 
 EJS support for Parcel bundler
 
+## Differences with [@sarioglu/parcel-plugin-ejs-template](https://github.com/sarioglu/parcel-plugin-ejs-template)
+
+- Fixed HMR and caching.
+- Improved `includes` dependency resolution.
+- Project code and repo improvements.
+- Added changes from [parcel-plugin-ejs-template-vars](https://github.com/Meyzz/parcel-plugin-ejs-template) (allowing for scoped _{ejs_file_name}.ejsrc_ variables files, see below).
+
 ## Installation
 
 You need:
