@@ -1,3 +1,4 @@
+/// <reference path="types/parcel-bundler.d.ts" />
 export = EjsAsset;
 declare class EjsAsset extends ParcelBundler.Asset<any> {
   /**
@@ -9,3 +10,4 @@ declare class EjsAsset extends ParcelBundler.Asset<any> {
     options: [name: string, options: {}][1]
   );
 }
+import { ParcelBundler } from "parcel-bundler";

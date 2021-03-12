@@ -1,14 +1,12 @@
 // @ts-check
 
-/** @type ParcelBundler */
-// @ts-ignore
-const { Asset } = require("parcel-bundler");
+const { ParcelBundler } = require("parcel-bundler");
 /** @type ParcelBundler.localRequire */
 // @ts-ignore
 const localRequire = require("parcel-bundler/lib/utils/localRequire");
 const path = require("path");
 
-class EjsAsset extends Asset {
+class EjsAsset extends ParcelBundler.Asset {
   /**
    * @param {ConstructorParameters<ParcelBundler["Asset"]>[0]} name
    * @param {ConstructorParameters<ParcelBundler["Asset"]>[1]} options
