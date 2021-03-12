@@ -1,13 +1,13 @@
 /// <reference path="types/parcel-bundler.d.ts" />
 export = EjsAsset;
-declare class EjsAsset extends ParcelBundler.Asset<any> {
+/**
+ * @extends {Asset<ejs.ClientFunction>}
+ */
+declare class EjsAsset extends Asset<ejs.ClientFunction> {
   /**
-   * @param {ConstructorParameters<ParcelBundler["Asset"]>[0]} name
-   * @param {ConstructorParameters<ParcelBundler["Asset"]>[1]} options
+   * @param {string} name
+   * @param {{}} options
    */
-  constructor(
-    name: [name: string, options: {}][0],
-    options: [name: string, options: {}][1]
-  );
+  constructor(name: string, options: {});
 }
-import { ParcelBundler } from "parcel-bundler";
+import { Asset } from "parcel-bundler";

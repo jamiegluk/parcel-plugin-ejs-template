@@ -1,15 +1,18 @@
 // @ts-check
 
-const { ParcelBundler } = require("parcel-bundler");
-/** @type ParcelBundler.localRequire */
+const { Asset } = require("parcel-bundler");
+/** @type localRequire */
 // @ts-ignore
 const localRequire = require("parcel-bundler/lib/utils/localRequire");
 const path = require("path");
 
-class EjsAsset extends ParcelBundler.Asset {
+/**
+ * @extends {Asset<ejs.ClientFunction>}
+ */
+class EjsAsset extends Asset {
   /**
-   * @param {ConstructorParameters<ParcelBundler["Asset"]>[0]} name
-   * @param {ConstructorParameters<ParcelBundler["Asset"]>[1]} options
+   * @param {string} name
+   * @param {{}} options
    */
   constructor(name, options) {
     super(name, options);
@@ -18,8 +21,7 @@ class EjsAsset extends ParcelBundler.Asset {
   }
 
   /**
-   * @param {Parameters<ParcelBundler.Asset["parse"]>[0]} code
-   * @returns {ReturnType<ParcelBundler.Asset["parse"]>}
+   * @param {string} code
    */
   async parse(code) {
     /** @type {ejsx.ejsExtended} */
@@ -38,7 +40,6 @@ class EjsAsset extends ParcelBundler.Asset {
     });
   }
 
-  /** @returns {ReturnType<ParcelBundler.Asset["generate"]>} */
   async generate() {
     const config =
       (await this.getConfig([
@@ -47,7 +48,7 @@ class EjsAsset extends ParcelBundler.Asset {
         ".ejsrc.js",
         "ejs.config.js",
       ])) || {};
-    return this.ast(config.locals);
+    return this.ast(/** @type ejs.Data | undefined */ (config.locals));
   }
 }
 
