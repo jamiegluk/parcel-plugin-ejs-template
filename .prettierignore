@@ -71,3 +71,6 @@ typings/
 
 # Jetbrains
 .idea
+
+# Generated d.ts files
+/*.d.ts
