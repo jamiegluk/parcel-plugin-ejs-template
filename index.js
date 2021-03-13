@@ -1,8 +1,7 @@
 // @ts-check
 
 /**
- * @typedef {import("parcel-bundler")} ParcelBundler
- * @param bundler {ParcelBundler}
+ * @param bundler {import("parcel-bundler")}
  */
 module.exports = function (bundler) {
   bundler.addAssetType("ejs", require.resolve("./EjsAsset"));
